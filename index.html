@@ -146,9 +146,11 @@
         /* Tinggi container = 94% viewport, tapi tidak lebih dari 940px
            dan tidak pernah melebihi tinggi viewport browser */
         height: 94vh;
-        height: 94dvh; /* dynamic viewport height (lebih akurat di mobile & resize) */
+        height: 94dvh;
+        /* dynamic viewport height (lebih akurat di mobile & resize) */
         max-height: min(940px, 96vh);
-        min-height: 0; /* hapus paksaan 700px agar tidak overflow di layar pendek */
+        min-height: 0;
+        /* hapus paksaan 700px agar tidak overflow di layar pendek */
         border-radius: 28px;
         border: 2px solid rgba(0, 242, 254, 0.2);
         box-shadow:
@@ -1341,6 +1343,7 @@
       letter-spacing: 0.5px;
       margin-top: 2px;
     }
+
     /* ==========================================================================
        CUSTOM TIMER SETTINGS PANEL
        ========================================================================== */
@@ -1358,7 +1361,9 @@
     .timer-settings-panel::before {
       content: '';
       position: absolute;
-      top: 0; left: 0; right: 0;
+      top: 0;
+      left: 0;
+      right: 0;
       height: 1px;
       background: linear-gradient(90deg, transparent, rgba(0, 242, 254, 0.4), transparent);
     }
@@ -1386,7 +1391,8 @@
     .timer-settings-title::before {
       content: '';
       display: inline-block;
-      width: 4px; height: 11px;
+      width: 4px;
+      height: 11px;
       background: var(--neon-cyan);
       box-shadow: 0 0 8px var(--neon-cyan);
       border-radius: 1px;
@@ -1464,7 +1470,8 @@
     .timer-slider::-webkit-slider-thumb {
       -webkit-appearance: none;
       appearance: none;
-      width: 20px; height: 20px;
+      width: 20px;
+      height: 20px;
       border-radius: 50%;
       background: linear-gradient(135deg, var(--neon-teal), var(--neon-cyan));
       border: 2px solid #070913;
@@ -1479,7 +1486,8 @@
     }
 
     .timer-slider::-moz-range-thumb {
-      width: 18px; height: 18px;
+      width: 18px;
+      height: 18px;
       border-radius: 50%;
       background: linear-gradient(135deg, var(--neon-teal), var(--neon-cyan));
       border: 2px solid #070913;
@@ -1552,7 +1560,8 @@
     }
 
     .btn-reset-timer-settings svg {
-      width: 13px; height: 13px;
+      width: 13px;
+      height: 13px;
     }
 
     /* Modal Reflection Backdrop */
@@ -3104,14 +3113,15 @@
       body.fullscreen-mode-active .task-list {
         grid-template-columns: repeat(3, 1fr);
       }
+
       body.fullscreen-mode-active .journal-feed {
         grid-template-columns: repeat(3, 1fr);
       }
+
       body.fullscreen-mode-active .explorer-folder-grid {
         grid-template-columns: repeat(5, 1fr);
       }
     }
-
   </style>
 </head>
 
@@ -3567,10 +3577,14 @@
                 <span data-i18n="timer_preset_label">⚡ Preset Cepat</span>
               </div>
               <div class="timer-preset-row">
-                <button type="button" class="timer-preset-chip" data-preset-focus="15" data-preset-break="3">15/3</button>
-                <button type="button" class="timer-preset-chip active" data-preset-focus="25" data-preset-break="5">25/5</button>
-                <button type="button" class="timer-preset-chip" data-preset-focus="45" data-preset-break="10">45/10</button>
-                <button type="button" class="timer-preset-chip" data-preset-focus="60" data-preset-break="15">60/15</button>
+                <button type="button" class="timer-preset-chip" data-preset-focus="15"
+                  data-preset-break="3">15/3</button>
+                <button type="button" class="timer-preset-chip active" data-preset-focus="25"
+                  data-preset-break="5">25/5</button>
+                <button type="button" class="timer-preset-chip" data-preset-focus="45"
+                  data-preset-break="10">45/10</button>
+                <button type="button" class="timer-preset-chip" data-preset-focus="60"
+                  data-preset-break="15">60/15</button>
               </div>
             </div>
 
@@ -3581,7 +3595,8 @@
                 <span class="value-badge" id="focusDurationBadge">25 Menit</span>
               </div>
               <input type="range" class="timer-slider" id="focusDurationSlider" min="1" max="120" step="1" value="25">
-              <div class="timer-setting-hint" data-i18n="timer_focus_hint">Geser untuk mengatur durasi sesi fokus belajar (1 - 120 menit).</div>
+              <div class="timer-setting-hint" data-i18n="timer_focus_hint">Geser untuk mengatur durasi sesi fokus
+                belajar (1 - 120 menit).</div>
             </div>
 
             <!-- Slider Istirahat -->
@@ -3591,12 +3606,14 @@
                 <span class="value-badge" id="breakDurationBadge">5 Menit</span>
               </div>
               <input type="range" class="timer-slider" id="breakDurationSlider" min="1" max="60" step="1" value="5">
-              <div class="timer-setting-hint" data-i18n="timer_break_hint">Geser untuk mengatur durasi sesi istirahat (1 - 60 menit).</div>
+              <div class="timer-setting-hint" data-i18n="timer_break_hint">Geser untuk mengatur durasi sesi istirahat (1
+                - 60 menit).</div>
             </div>
 
             <!-- Tombol Reset -->
             <button type="button" class="btn-reset-timer-settings" id="btnResetTimerSettings">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
+                stroke-linejoin="round">
                 <path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8" />
                 <path d="M3 3v5h5" />
               </svg>
@@ -3925,7 +3942,8 @@
             <div class="setting-info">
               <div class="setting-title" data-i18n="setting_fullscreen_title">Mode Layar Penuh Browser</div>
               <div class="setting-desc" data-i18n="setting_fullscreen_desc">
-                Sesuaikan tinggi & lebar aplikasi agar memenuhi seluruh jendela browser. Khusus untuk PC/desktop agar tidak perlu scroll atau zoom out.
+                Sesuaikan tinggi & lebar aplikasi agar memenuhi seluruh jendela browser. Khusus untuk PC/desktop agar
+                tidak perlu scroll atau zoom out.
               </div>
             </div>
             <label class="cyber-switch" for="fullscreenToggle">
@@ -4120,17 +4138,21 @@
             if (!data || data.payload === undefined) return;
             const payload = data.payload;
 
+            // FIX: Use StorageManager.set() so data is written to the
+            // correct per-user namespaced key (e.g. key__u_<UID>).
+            // Previously this wrote to bare keys which StorageManager
+            // never reads from, causing cross-device sync to silently fail.
             if (key === 'tasks') {
-              localStorage.setItem('productivity_hub_tasks_v5', JSON.stringify(payload));
+              window.StorageManager.set('productivity_hub_tasks_v5', payload);
               tasksChanged = true;
             } else if (key === 'folders') {
-              localStorage.setItem('productivity_hub_folders_v5', JSON.stringify(payload));
+              window.StorageManager.set('productivity_hub_folders_v5', payload);
               journalChanged = true;
             } else if (key === 'subjects') {
-              localStorage.setItem('productivity_hub_subjects_v5', JSON.stringify(payload));
+              window.StorageManager.set('productivity_hub_subjects_v5', payload);
               journalChanged = true;
             } else if (key === 'entries') {
-              localStorage.setItem('productivity_hub_journal_v5', JSON.stringify(payload));
+              window.StorageManager.set('productivity_hub_journal_v5', payload);
               journalChanged = true;
             }
           });
@@ -4912,7 +4934,7 @@
         toast_timer_reset_default: 'Timer dikembalikan ke default (25/5)',
         toast_timer_preset_applied: 'Preset diterapkan: Fokus {focus} menit, Istirahat {break} menit'
       },
-    
+
 
       en: {
         app_protocol: 'CYBER OS // PROTOCOL v4.7',
@@ -6007,9 +6029,9 @@
     /* ==========================================================================
        MODULE 2: FOKUS POMODORO TIMER
        ========================================================================== */
-     /* ==========================================================================
-       MODULE 2: FOKUS POMODORO TIMER (DENGAN PENGATURAN KUSTOM)
-       ========================================================================== */
+    /* ==========================================================================
+      MODULE 2: FOKUS POMODORO TIMER (DENGAN PENGATURAN KUSTOM)
+      ========================================================================== */
     const FocusTimer = {
       DEFAULT_FOCUS: 25,
       DEFAULT_BREAK: 5,
