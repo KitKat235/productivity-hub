@@ -143,15 +143,28 @@
       .phone-container {
         width: 94%;
         max-width: 680px;
+        /* Tinggi container = 94% viewport, tapi tidak lebih dari 940px
+           dan tidak pernah melebihi tinggi viewport browser */
         height: 94vh;
-        max-height: 940px;
-        min-height: 700px;
+        height: 94dvh; /* dynamic viewport height (lebih akurat di mobile & resize) */
+        max-height: min(940px, 96vh);
+        min-height: 0; /* hapus paksaan 700px agar tidak overflow di layar pendek */
         border-radius: 28px;
         border: 2px solid rgba(0, 242, 254, 0.2);
         box-shadow:
           0 30px 80px -15px rgba(0, 0, 0, 0.8),
           0 0 45px rgba(0, 242, 254, 0.12),
           inset 0 0 0 1px rgba(0, 242, 254, 0.18);
+      }
+    }
+
+    /* Layar PC sangat pendek (< 700px): kecilkan margin agar tetap fit */
+    @media (min-width: 600px) and (max-height: 720px) {
+      .phone-container {
+        height: 96vh;
+        height: 96dvh;
+        max-height: 96vh;
+        border-radius: 20px;
       }
     }
 
